@@ -1,5 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -31,11 +33,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-        type: "asset/inline",
+        type: 'asset/inline',
       },
     ],
   },
@@ -45,6 +47,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+    }),
+    new ESLintPlugin({
+      fix: true,
+    }),
+    new StylelintPlugin({
+      context: './src',
+      fix: true,
     }),
   ],
 };
