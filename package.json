@@ -1,0 +1,24 @@
+{
+  "name": "front-end-starter",
+  "version": "1.0.0",
+  "description": "Web development starter kit including the most popular tools & libraries used to create modern front-end apps.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusalbukrk/front-end-starter.git"
+  },
+  "keywords": [
+    "starter",
+    "boilerplate",
+    "front-end"
+  ],
+  "author": "Gus Albuquerque (gusalbukrk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gusalbukrk/front-end-starter/issues"
+  },
+  "homepage": "https://github.com/gusalbukrk/front-end-starter#readme"
+}
