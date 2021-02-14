@@ -6,10 +6,12 @@ module.exports = {
   extends: [
     'airbnb-base',
     'prettier',
+    'plugin:jest/all',
     'plugin:react/recommended',
   ],
   plugins: [
     'prettier',
+    'jest',
   ],
   parserOptions: {
     ecmaVersion: 12,
@@ -17,5 +19,10 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+  },
+  settings: {
+    'react': {
+      version: 'detect',
+    },
   },
 };
