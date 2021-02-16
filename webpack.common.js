@@ -4,6 +4,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
+  target: 'web',
   entry: {
     main: './src/index.js',
   },
