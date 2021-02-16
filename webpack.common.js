@@ -1,4 +1,3 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
@@ -18,24 +17,6 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: '',
-          },
-        }, 'css-loader'],
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: '',
-          },
-        }, 'css-loader', 'sass-loader'],
-      },
-      {
         test: /\.html$/i,
         loader: 'html-loader',
       },
@@ -50,9 +31,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
-    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
