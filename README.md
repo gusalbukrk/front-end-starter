@@ -2,19 +2,12 @@
 
 - [Front-end Starter Kit](#front-end-starter-kit)
   - [Known issues](#known-issues)
-    - [bugs without .browserslistrc](#bugs-without-browserslistrc)
     - [webpack-dev-server & .browserslistrc](#webpack-dev-server--browserslistrc)
     - [mini-css-extract-plugin](#mini-css-extract-plugin)
     - [html-loader bug](#html-loader-bug)
   - [To-Do](#to-do)
 
 ## Known issues
-
-### bugs without .browserslistrc
-
-- if `.browserslistrc` is removed:
-  - node libraries from `styled-components` will need polyfills
-  - output code will contain invalid syntax (Terser won't be able to parse it)
 
 ### webpack-dev-server & .browserslistrc
 
