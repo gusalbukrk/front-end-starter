@@ -1,0 +1,18 @@
+[development]
+last 2 chrome versions
+
+# browserslist's "defaults" is different from
+# default behavior of @babel/preset-env in babel v7
+#
+# if you want to specify targets only for development
+# and use babel's default in production,
+# you must delete this file and add to package.json:
+#
+# "browserslist": {
+#   "development": [
+#     "last 2 chrome versions"
+#   ]
+# }
+
+[production]
+defaults
