@@ -13,6 +13,10 @@
 
 - webpack-dev-server's auto-reloading doesn't work when there's a `.browserslistrc` file or a `browserslist` key in `package.json`
 - this happens because webpack-dev-server isn't yet 100% compatible with webpack 5
+- **solutions**:
+  - `target: 'web',` at `webpack.config.js`
+    - after bug is fixed, remove `target` key to re-enable default behavior
+  - wait for `webpack-dev-server v4`
 
 ### mini-css-extract-plugin
 
