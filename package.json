@@ -1,7 +1,7 @@
 {
   "name": "front-end-starter",
   "version": "1.0.0",
-  "description": "Web development starter kit including the most popular tools & libraries used to create modern front-end apps.",
+  "description": "Web development starter kit including the most popular libraries used to create modern front-end apps.",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack serve --node-env development --config webpack.dev.js",

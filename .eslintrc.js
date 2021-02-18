@@ -9,10 +9,7 @@ module.exports = {
     'plugin:jest/all',
     'plugin:react/recommended',
   ],
-  plugins: [
-    'prettier',
-    'jest',
-  ],
+  plugins: ['prettier', 'jest'],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
@@ -21,7 +18,7 @@ module.exports = {
     'prettier/prettier': 'error',
   },
   settings: {
-    'react': {
+    react: {
       version: 'detect',
     },
   },

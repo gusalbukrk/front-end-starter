@@ -8,11 +8,9 @@ module.exports = {
           version: 3.8,
           proposals: true,
         },
-      }
+      },
     ],
     '@babel/preset-react',
   ],
-  plugins: [
-    'babel-plugin-styled-components',
-  ]
+  plugins: ['babel-plugin-styled-components'],
 };

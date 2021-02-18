@@ -1,11 +1,11 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -18,21 +18,28 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.css$/,
-        use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: '',
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '',
+            },
           },
-        }, 'css-loader'],
+          'css-loader',
+        ],
       },
       {
         test: /\.s[ac]ss$/,
-        use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {
-            publicPath: '',
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '',
+            },
           },
-        }, 'css-loader', 'sass-loader'],
+          'css-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
