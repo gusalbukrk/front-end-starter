@@ -1,3 +1,5 @@
+# How to add Typescript
+
 - [How to add Typescript](#how-to-add-typescript)
   - [ts-loader](#ts-loader)
     - [fork-ts-checker(-webpack-plugin (optional)](#fork-ts-checker-webpack-plugin-optional)
@@ -5,11 +7,18 @@
     - [setup](#setup)
   - [Eslint & Typescript](#eslint--typescript)
 
-# How to add Typescript
-
 - `npm i -D typescript`
 - `npx tsc --init`
   - open the file and edit: `"module": "es2015"`
+- at `webpack.common.js`:
+
+```js
+// will fix "Field 'browser' doesn't contain a valid alias configuration"
+resolve: {
+  extensions: ['.ts', '.js'],
+},
+```
+
 - from here, you have 2 options:
   - **ts-loader**: to use without babel
   - **babel typescript preset**: to use with babel
