@@ -1,11 +1,14 @@
 # How to add Typescript
 
 - [How to add Typescript](#how-to-add-typescript)
+  - [Initial setup](#initial-setup)
   - [ts-loader](#ts-loader)
     - [fork-ts-checker(-webpack-plugin (optional)](#fork-ts-checker-webpack-plugin-optional)
   - [preset-typescript](#preset-typescript)
     - [setup](#setup)
   - [Eslint & Typescript](#eslint--typescript)
+
+## Initial setup
 
 - `npm i -D typescript`
 - `npx tsc --init`
@@ -15,13 +18,13 @@
 ```js
 // will fix "Field 'browser' doesn't contain a valid alias configuration"
 resolve: {
-  extensions: ['.ts', '.js'],
+  extensions: ['.js', '.ts'],
 },
 ```
 
 - from here, you have 2 options:
-  - **ts-loader**: to use without babel
-  - **babel typescript preset**: to use with babel
+  - **ts-loader**: to compile typescript with ts-loader, not with babel
+  - **babel typescript preset**: to compile typescript with babel
 
 ## ts-loader
 
