@@ -10,7 +10,7 @@ module.exports = {
     {
       runner: 'jest-runner-eslint',
       displayName: 'eslint',
-      testMatch: ['<rootDir>/src/**/*.(spec|test).js'],
+      testMatch: ['<rootDir>/src/**/*.(spec|test).(ts|tsx|js)'],
     },
   ],
   watchPlugins: ['jest-runner-eslint/watch-fix'], // toggle --fix in watch mode pressing 'F'

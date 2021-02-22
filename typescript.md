@@ -11,7 +11,7 @@
 ## Initial setup
 
 - `npm i -D typescript`
-- `npm i -D @types/react @types/react-dom`
+- install types from previous installed libraries: `npm i -D @types/react @types/react-dom @types/jest @types/styled-components @types/react-test-renderer`
 - `npx tsc --init`
   - open the file and edit: `"module": "es2015"`, `"jsx": "react"`
 - at `webpack.common.js`:
