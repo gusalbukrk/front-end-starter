@@ -11,14 +11,15 @@
 ## Initial setup
 
 - `npm i -D typescript`
+- `npm i -D @types/react @types/react-dom`
 - `npx tsc --init`
-  - open the file and edit: `"module": "es2015"`
+  - open the file and edit: `"module": "es2015"`, `"jsx": "react"`
 - at `webpack.common.js`:
 
 ```js
 // will fix "Field 'browser' doesn't contain a valid alias configuration"
 resolve: {
-  extensions: ['.js', '.ts'],
+  extensions: ['.js', '.jsx', '.ts', '.tsx'],
 },
 ```
 
@@ -120,7 +121,7 @@ plugins: [
 ## Eslint & Typescript
 
 - `npm i -D @typescript-eslint/parser @typescript-eslint/eslint-plugin`
-- at `webpack.common.js`, in `ESLintPlugin` options add: `extensions: ['js', 'ts'],`
+- at `webpack.common.js`, in `ESLintPlugin` options add: `extensions: ['js', 'jsx', 'ts', 'tsx'],`
 - `.eslintrc.js`:
 
 ```js
@@ -157,7 +158,7 @@ plugins: [
         // fix 'unable to resolve path' error
         'import/resolver': {
           node: {
-            extensions: ['.js', '.json', '.ts'],
+            extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
           },
         },
       },
