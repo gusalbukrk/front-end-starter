@@ -12,8 +12,6 @@
 
 - `npm i -D typescript`
 - install types from previous installed libraries: `npm i -D @types/react @types/react-dom @types/jest @types/styled-components @types/react-test-renderer`
-- `npx tsc --init`
-  - open the file and edit: `"module": "es2015"`, `"jsx": "react"`
 - at `webpack.common.js`:
 
 ```js
@@ -30,6 +28,26 @@ resolve: {
 ## ts-loader
 
 - `npm i -D ts-loader`
+- `npx tsc --init`
+  - open the file and edit: `"module": "es2015"`, `"jsx": "react"`, `"moduleResolution": "node"`
+- `npm i -D ts-jest`, `jest.config.js`:
+
+```js
+module.exports = {
+  projects: [
+    {
+      displayName: 'jest',
+      preset: 'ts-jest', // makes possible to write tests in typescript
+      // ...
+    },
+    {
+      // ...
+    },
+  ],
+};
+
+```
+
 - `webpack.common.js`, add to `module.rules`:
 
 ```js
@@ -103,6 +121,7 @@ plugins: [
     "module": "es2015",
     "strict": true,
     "allowJs": true,
+    "jsx": "react",
     "noEmit": true,
 
     // make `tsc` throw an error if an unsupported feature is used
@@ -125,6 +144,34 @@ plugins: [
 - `.eslintrc.js`:
 
 ```js
+module.exports = {
+  // ...
+  rules: {
+    'prettier/prettier': 'error',
+
+    // fix 'missing file extension' error
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    // fix 'unable to resolve path' error
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      },
+    },
+  },
   overrides: [
     {
       files: ['*.ts', '*tsx'],
@@ -141,27 +188,8 @@ plugins: [
         'no-shadow': 'off',
         '@typescript-eslint/no-use-before-define': ['error'],
         '@typescript-eslint/no-shadow': ['error'],
-
-        // fix 'missing file extension' error
-        'import/extensions': [
-          'error',
-          'ignorePackages',
-          {
-            js: 'never',
-            jsx: 'never',
-            ts: 'never',
-            tsx: 'never',
-          }
-        ],
-      },
-      settings: {
-        // fix 'unable to resolve path' error
-        'import/resolver': {
-          node: {
-            extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-          },
-        },
       },
     },
   ],
+};
 ```
