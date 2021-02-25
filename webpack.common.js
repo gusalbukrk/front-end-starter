@@ -7,10 +7,13 @@ module.exports = {
   entry: {
     main: './src/index.js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -36,6 +39,7 @@ module.exports = {
     }),
     new ESLintPlugin({
       fix: true,
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     new StylelintPlugin({
       context: './src',

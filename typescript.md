@@ -98,7 +98,7 @@ plugins: [
 
 - `npm i -D @babel/preset-typescript`
 - at `babel.config.js` add to `presets` array: `@babel/preset-typescript`
-- at `webpack.common.js`, add to module.rules:
+- at `webpack.common.js`, erase the previous `js` rule and add:
 
 ```js
 {
