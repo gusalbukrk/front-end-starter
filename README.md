@@ -1,16 +1,11 @@
 # Front-end Starter Kit
 
 - [Front-end Starter Kit](#front-end-starter-kit)
-  - [How to add Typescript](#how-to-add-typescript)
   - [Known issues](#known-issues)
     - [webpack-dev-server & .browserslistrc](#webpack-dev-server--browserslistrc)
     - [mini-css-extract-plugin](#mini-css-extract-plugin)
     - [html-loader bug](#html-loader-bug)
   - [To-Do](#to-do)
-
-## How to add Typescript
-
-- instructions on how to add typescript [here](typescript.md)
 
 ## Known issues
 
