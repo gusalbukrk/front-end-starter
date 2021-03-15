@@ -1,13 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../index.module.css';
 
-export function Header() {
-  return <h1 className={styles.header}>Starter Kit</h1>;
-}
+import styles from './header.module.scss';
 
-export const Subheader = styled.h2`
+const Subheader = styled.h2`
   color: red;
   padding-bottom: 1rem;
   font-family: monospace;
 `;
+
+export default function Header() {
+  return (
+    <>
+      <h1 className={styles.header}>Starter Kit</h1>
+      <Subheader>for modern front-end apps</Subheader>
+    </>
+  );
+}

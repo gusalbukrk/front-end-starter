@@ -1,20 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './index.css';
+import './reset.css';
 import './index.scss';
 
-import { Header, Subheader } from './components/Header';
+import Header from './components/Header';
 
 console.log('from index');
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Subheader>for modern front-end apps</Subheader>
-    </>
-  );
+  return <Header />;
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
