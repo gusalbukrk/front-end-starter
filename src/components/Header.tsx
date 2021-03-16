@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../index.module.css';
+import styles from './header.module.scss';
 
 function Header() {
   return <h1 className={styles.header}>Starter Kit</h1>;
